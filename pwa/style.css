@@ -1,0 +1,222 @@
+/*pointer-events: none;
+Faz com que o elemento ignore cliques (o clique "passa através" dele para o que está atrás).*/
+
+:root {
+    --pwa-blue: #bba63c;
+    --bg-light: #ffffff;
+    --text-color: #283239;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column; /* Organiza os filhos (header, section, footer) em coluna */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+#main-header {
+    text-decoration: none;
+    padding: 15px 20px;
+    border-bottom: 1px solid #ddd;
+    background: rgb(255, 255, 255);
+    
+    /* Centra o Logótipo */
+    display: flex;
+    justify-content: flex-start; 
+    align-items: center;
+}
+/*flex-start: alinha tudo a esquerda.
+center: alinha tudo ao centro.
+flex-end: alinha tudo a direita.*/
+
+
+.logo {
+    text-decoration: none; /* remove o sublinhado da logo*/
+    cursor: pointer;
+    font-size: 2rem;
+    color: #bba63c;
+    font-weight: bold; 
+}
+
+
+#main-content {
+    flex-grow: 1; /*ocupa o espaço disponivel*/
+    overflow-y: auto;
+    padding: 20px;
+    background-color: white;
+}
+
+.card {
+    background: var(--bg-light);
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    border: 1px solid #eee;
+}
+
+#main-footer {
+    background-color: rgb(205, 178, 23);
+    display: flex;
+    justify-content: space-around;
+    padding: 12px 0;
+    color: rgb(0, 0, 0);
+    user-select: none;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1; 
+    max-width: 75px; /* Reduzi um pouco para os botões não ficarem tão largos */
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+.nav-item i { 
+    font-size: 24px; 
+}
+
+/*QUANDO O BOTÃO ESTÁ SELECIONADO*/
+.nav-item.active {
+    color: #ff0000; /* Muda a cor do texto para vermelho */
+}
+
+
+.nav-item span { 
+    font-size: 11px; 
+    margin-top: 4px; 
+}
+
+.img-pwa {
+    max-width: 350px;
+    margin: auto ;
+    width:350px;
+    /*colocar imagem a esquerda do texto*/
+    float:left;
+    margin-right:20px;
+    border-radius: 15px; /*deixa os cantos arredondados*/
+}
+
+.img-praia {
+    max-width: 350px;
+    margin: auto ;
+    width:350px;
+    /*colocar imagem a direita do texto*/
+    float:right;
+    margin-top: -130px;
+    border-radius: 15px; /*deixa os cantos arredondados*/
+}
+
+.img-praia-centro {
+    width:350px;
+    margin-top: 0px;
+}
+
+.banner-dubai {
+    position: relative;
+    /* Anula o padding de 20px para encostar nas bordas */
+    /*para nao ficar aquela barra em baixo como a lateral*/
+    margin: -20px -20px 0 -20px; 
+    
+    /* Calcula a altura para tocar no menu amarelo (footer) */
+    height: calc(100vh - 200px); 
+}
+
+.img-dubai-grande {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Faz a foto preencher o espaço sem deformar */
+    object-position: top; 
+    display: block;
+}
+
+.texto-no-ceu {
+    position: absolute;
+    top: 0px; /* Coloca o título no topo da foto */
+    left: 50%;
+    color: rgb(0, 0, 0);
+    font-size: 3.5rem;
+    font-weight: bold;
+}
+
+.img-github { /*esta foto esta a meio da pagina*/
+    max-width: 350px;
+}
+
+
+.cidade-img {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; /*alinha os botões em baixo*/
+    gap: 40px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+} 
+
+.cidade,
+.clube {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* imagem da cidade */
+.img-cidade {
+    width: 250px;
+    border-radius: 10px;
+}
+
+
+/* botão cidade */
+.btn-cidade {
+    margin-top: 10px;
+    color: rgb(255, 255, 255);
+    background-color: #000000;
+}
+
+/* botão clube */
+.btn-clube {
+    margin-top: 65px;
+    color: rgb(255, 255, 255);
+    background-color: #000000;
+}
+
+.img-claque {
+    margin-top: -405px;
+    width:250px;
+    border-radius:10px;
+}
+
+.img-clube {
+    width:120px;
+    margin-top:20px;
+}
+
+
+.fotos {
+    display: flex;
+    justify-content: space-between; /* empurra um para a esquerda e outro para a direita */
+    margin-top: 30px;
+}
+
+.parte-esquerda, .parte-direita {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espaço entre a foto e o texto */
+}
+
+.img-pwa, .img-praia {
+    width: 315px;
+    margin: 0;
+}
+
+/*com isto todos os botões ficam definidos como pointer significa que fica com aquele rato diferente quado ficamos com o rato em cima do botao*/
+button {
+    cursor: pointer;
+}
+
